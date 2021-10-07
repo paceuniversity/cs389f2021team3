@@ -1,48 +1,62 @@
 # cs389f2021team3
 
-**App name**
+## App name
+### *Placeholder Name*
 
-**Team** 
+## Team
 
-**App description**
+| Name              | Role  | Contact           |
+|:----------------- |:-----:| -----------------:|
+| Joseph Newbury    |       |                   |
+| Cassandra Thomas  |       |                   |
+| Spencer Zecchini  |       | rz09697p@pace.edu |
 
-**Idea Proposal**
 
-**Calendar**
+## App Description
+TBA
 
-**Product Backlog**
+## Idea Proposal
+TBA
 
-**Architecture & Design**
+## Calendar
+*[Google Calendar](https://calendar.google.com/calendar/u/0?cid=aXZoMmU3NjhzMjRkdGlxZWYwcXZvbzhxcjBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 
-**Content**
+## Product Backlog
+TBA
 
-**Sprint 1**
+## Architecture & Design
+TBA
 
+## Content
+### Sprint 1
 * Sprint planning
 * Scrums
 * Sprint demo - video and apk (or equivalent)
 * Spring retrospective
 
-**Sprint 2**
-
+### Sprint 2
 * Sprint planning
 * Scrums
 * Sprint demo - video and apk (or equivalent)
 * Spring retrospective
 
-**Sprint 3** 
-
+### Sprint 3 
 * Sprint planning
 * Scrums
 * Sprint demo - video and apk (or equivalent)
 * Spring retrospective
 
-**Final presentation**
+## Final presentation
+TBA
 
-**Poster**
+## Poster
+TBA
 
-**Process description**
+## Process description
+TBA
 
-**Communications**
+## Communications
+[![Discord Logo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogo-logos.com%2Fwp-content%2Fuploads%2F2018%2F03%2FDiscord_Logo.png&f=1&nofb=1)](https://discord.com/)
 
-**Tools**
+## Tools
+<img src="https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=764" width="25%" height="25%">
