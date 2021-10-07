@@ -56,7 +56,7 @@ TBA
 TBA
 
 ## Communications
-[![Discord Logo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogo-logos.com%2Fwp-content%2Fuploads%2F2018%2F03%2FDiscord_Logo.png&f=1&nofb=1)](https://discord.com/)
+[![Discord Logo](<img src="https://cdn.freebiesupply.com/logos/large/2x/discord-logo-png-transparent.png" width="25%" height="25%">)](https://discord.com/)
 
 ## Tools
 <img src="https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=764" width="25%" height="25%">
