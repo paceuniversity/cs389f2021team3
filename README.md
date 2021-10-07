@@ -56,7 +56,7 @@ TBA
 TBA
 
 ## Communications
-[![Discord Logo](<img src="https://cdn.freebiesupply.com/logos/large/2x/discord-logo-png-transparent.png" width="25%" height="25%">)](https://discord.com/)
+[<img src="https://cdn.freebiesupply.com/logos/large/2x/discord-logo-png-transparent.png" width="25%" height="25%">](https://discord.com/)
 
 ## Tools
 <img src="https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=764" width="25%" height="25%">
