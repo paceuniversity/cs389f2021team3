@@ -9,7 +9,7 @@
 |:----------------- |:-----:| -----------------:|
 | Joseph Newbury    |       |                   |
 | Cassandra Thomas  |       |                   |
-| Spencer Zecchini  |       | rz09697p@pace.edu |
+| Robert Zecchini   |       | rz09697p@pace.edu |
 
 
 ## App Description
