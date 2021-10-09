@@ -8,7 +8,7 @@
 | Name              | Role  | Contact           |
 |:----------------- |:-----:| -----------------:|
 | Joseph Newbury    |       | jn61555p@pace.edu |
-| Cassandra Thomas  |       |                   |
+| Cassandra Thomas  |       | ct35779p@pace.edu |
 | Robert Zecchini   |       | rz09697p@pace.edu |
 
 
