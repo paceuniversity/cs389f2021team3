@@ -1,7 +1,7 @@
 # cs389f2021team3
 
 ## App name
-### *Placeholder Name*
+### *Exsecutum*
 
 ## Team
 
