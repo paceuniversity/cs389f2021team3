@@ -8,8 +8,8 @@
 | Name              | Role  | Contact           |
 |:----------------- |:-----:| -----------------:|
 | Joseph Newbury    |       | jn61555p@pace.edu |
-| Cassandra Thomas  |       |                   |
-| Robert Zecchini   |       | rz09697p@pace.edu |
+| Cassandra Thomas  |       | ct35779p@pace.edu |
+| Robert Zecchini   | **Project Manager** | rz09697p@pace.edu |
 
 
 ## App Description
@@ -53,7 +53,7 @@ TBA
 * [Google Calendar](https://calendar.google.com/calendar/u/0?cid=aXZoMmU3NjhzMjRkdGlxZWYwcXZvbzhxcjBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 
 ## Product Backlog
-TBA
+* [Product Backlog](https://docs.google.com/spreadsheets/d/1G97VNNnwyI27zoAKjI8QwXRlrd3WQUG9/edit#gid=2120834477)
 
 ## Architecture & Design
 TBA
