@@ -78,7 +78,7 @@ TBA
 * Spring retrospective
 
 ## Final presentation
-**DEC. 20th**
+December 20th, 2021
 
 ## Poster
 TBA
