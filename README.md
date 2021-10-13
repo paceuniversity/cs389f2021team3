@@ -78,7 +78,7 @@ TBA
 * Spring retrospective
 
 ## Final presentation
-TBA
+**DEC. 20th**
 
 ## Poster
 TBA
