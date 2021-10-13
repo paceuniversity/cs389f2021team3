@@ -84,7 +84,7 @@ TBA
 TBA
 
 ## Process description
-TBA
+Team 3 will be using the Agile approach to complete this project. There will be 3 sprints with weekly scrum meetings.
 
 ## Communications
 [<img src="https://cdn.freebiesupply.com/logos/large/2x/discord-logo-png-transparent.png" width="25%" height="25%">](https://discord.com/)
