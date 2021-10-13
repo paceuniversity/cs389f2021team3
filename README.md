@@ -7,13 +7,13 @@
 
 | Name              | Role  | Contact           |
 |:----------------- |:-----:| -----------------:|
-| Joseph Newbury    |       | jn61555p@pace.edu |
+| Joseph Newbury    |  **Product Owner** | jn61555p@pace.edu |
 | Cassandra Thomas  | **Developer**      | ct35779p@pace.edu |
 | Robert Zecchini   | **Project Manager** | rz09697p@pace.edu |
 
 
 ## App Description
-TBA
+Planner app meant for people with executive functioning shortcomings. The app will have a robust notification system, features to enforce routine, and features to help with long term projects and task prioritization.
 
 ## Idea Proposal
 1. What is/are the problem/s you want to solve? Why is it important?
