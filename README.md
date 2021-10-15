@@ -81,7 +81,8 @@ TBA
 December 20th, 2021
 
 ## Poster
-TBA
+![IMG_8831](https://user-images.githubusercontent.com/64506144/137413709-466cfff2-66dc-46a0-a72c-e1a95ecd1afe.jpg)
+
 
 ## Process description
 Team 3 will be using the Agile approach to complete this project. There will be 3 sprints with weekly scrum meetings.
