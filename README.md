@@ -81,7 +81,8 @@ TBA
 December 20th, 2021
 
 ## Poster
-![IMG_8831](https://user-images.githubusercontent.com/64506144/137413709-466cfff2-66dc-46a0-a72c-e1a95ecd1afe.jpg)
+![397e30f775f571a4dfd95b965b7bd691](https://user-images.githubusercontent.com/64506144/137413950-52307572-0f11-4d03-9bf5-7f6bae2ec17a.png)
+
 
 
 ## Process description
