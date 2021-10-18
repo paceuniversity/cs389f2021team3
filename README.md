@@ -54,6 +54,7 @@ Planner app meant for people with executive functioning shortcomings. The app wi
 
 ## Product Backlog
 * [Product Backlog](https://docs.google.com/spreadsheets/d/1G97VNNnwyI27zoAKjI8QwXRlrd3WQUG9/edit#gid=2120834477)
+* [Requirements Discovery](https://docs.google.com/document/d/1v6a4dyaMgvB8VT6UKKvLmVpN3eAiwd1_-zdFfL173Dg/edit#)
 
 ## Architecture & Design
 TBA
