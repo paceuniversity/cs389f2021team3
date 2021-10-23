@@ -57,7 +57,7 @@ Planner app meant for people with executive functioning shortcomings. The app wi
 * [Requirements Discovery](https://docs.google.com/document/d/1v6a4dyaMgvB8VT6UKKvLmVpN3eAiwd1_-zdFfL173Dg/edit#)
 
 ## Architecture & Design
-TBA
+* [Architecture Doc](https://docs.google.com/document/d/18yRQtCtkC87bgRiX2yRvyWKywhxVOe1Z-CQwXMsvXfE/edit)
 
 ## Content
 ### Sprint 1
