@@ -41,7 +41,7 @@ Planner app meant for people with executive functioning shortcomings. The app wi
 * [School Planner](https://play.google.com/store/apps/details?id=daldev.android.gradehelper) - Planner app aimed specifically at students. It has a lot of great features in terms of visualizing tasks for students. The feature where you can put your teacher or professor's contact information into the app is also great, since it removes a barrier for the user to contact them in case they have to. In addition the app has great features in terms of reminding the student about their assignments and classes. The problem with this app is that the setup process does not go in depth enough for our users and trusts the user to create entries without any assistance. Our app will aim to assist the user throughout the whole setup process, and continually remind them to keep track of their assigments.
 
 6. How is your app unique?
-<p>After looking at the apps which are similar to ours a patten emerges. Lots of apps do some things which are helpful for people who lack executive functioning skills, but in our opinion, none of them provide a full package aimed directly at their use case. We aim to fix that by creating an app tailor made for those users.</p>
+<p>After looking at the apps which are similar to ours a patten emerges. Lots of apps do some things which are helpful for people who lack executive functioning skills, but in our opinion, none of them provide a full package aimed directly at their use case. We aim to fix that by creating an app tailor made for those users. We will do that by creating an experience which is much more guided compared to any other planner app.</p>
 
 7. What are the risks associated with the development of this app? Why wouldn’t it be delivered completely (scope), on time and on budget? Identify 3 to 5 risks that are relevant in your case.
 <p>The biggest risk associated with making this app is simply the scope of the app. What we aim to do is very ambitious within the time frame we have. We could run into issues in terms of implementing APIs we need for the planner. We could also simply have trouble implementing some of our ideas into functional features in the app.</p>
@@ -54,9 +54,10 @@ Planner app meant for people with executive functioning shortcomings. The app wi
 
 ## Product Backlog
 * [Product Backlog](https://docs.google.com/spreadsheets/d/1G97VNNnwyI27zoAKjI8QwXRlrd3WQUG9/edit#gid=2120834477)
+* [Requirements Discovery](https://docs.google.com/document/d/1v6a4dyaMgvB8VT6UKKvLmVpN3eAiwd1_-zdFfL173Dg/edit#)
 
 ## Architecture & Design
-TBA
+* [Architecture Doc](https://docs.google.com/document/d/18yRQtCtkC87bgRiX2yRvyWKywhxVOe1Z-CQwXMsvXfE/edit)
 
 ## Content
 ### Sprint 1
@@ -81,7 +82,9 @@ TBA
 December 20th, 2021
 
 ## Poster
-TBA
+![397e30f775f571a4dfd95b965b7bd691](https://user-images.githubusercontent.com/64506144/137413950-52307572-0f11-4d03-9bf5-7f6bae2ec17a.png)
+
+
 
 ## Process description
 Team 3 will be using the Agile approach to complete this project. There will be 3 sprints with weekly scrum meetings.
