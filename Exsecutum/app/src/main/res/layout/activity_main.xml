@@ -6,13 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/ButtonMonth"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:text="M"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonYear"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ButtonWeek"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ButtonDay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="D"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonWeek"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonWeek"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/ButtonTask"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Task"
+        android:onClick="showDatePicker"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonYear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ButtonYear" />
+
+    <Button
+        android:id="@+id/ButtonWeek"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="W"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonMonth"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonMonth"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ButtonDay" />
+
+    <Button
+        android:id="@+id/ButtonYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Y"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonMonth"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonTask"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ButtonMonth" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:maxDate="12/31/2200"
+        android:minDate="01/01/2000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonMonth" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
