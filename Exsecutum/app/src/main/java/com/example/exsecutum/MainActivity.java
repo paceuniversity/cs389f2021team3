@@ -10,13 +10,15 @@ package com.example.exsecutum;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Button newTask;
     //Creating instance of main activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,20 @@ public class MainActivity extends AppCompatActivity {
         //Copy this to some other segment of code if you want to adjust the appearance
         //of the calendar or if you want the calendar to do something.
         CalendarView mainCalendarView = (CalendarView) findViewById(R.id.calendarView);
+
+        //setting up a 'new task' button to switch to the task maker page
+        newTask = (Button)findViewById(R.id.buttonNewTask);
+        newTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchNewTask();
+            }
+        });
+    }
+
+    private void launchNewTask() {
+        Intent taskPage = new Intent(this, taskMaker.class);
+        startActivity(taskPage);
     }
 
     //TODO use this function for any fragment that's going to open up a datepicker!
