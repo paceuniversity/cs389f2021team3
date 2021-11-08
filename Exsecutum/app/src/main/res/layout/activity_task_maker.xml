@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".taskMaker">
+
+  <EditText
+      android:id="@+id/editTextTaskName"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="32dp"
+      android:ems="10"
+      android:gravity="center"
+      android:inputType="textPersonName"
+      android:text="@string/task_name"
+      android:textSize="24sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:importantForAutofill="no" />
+
+  <ScrollView
+      android:id="@+id/scrollView2"
+      android:layout_width="393dp"
+      android:layout_height="0dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="8dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editTextTaskName"
+      app:layout_constraintVertical_bias="0.0"
+      tools:ignore="SpeakableTextPresentCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <TextView
+          android:id="@+id/textView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/days_this_event_occurs"
+          android:textAllCaps="false"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <CheckBox
+          android:id="@+id/checkBox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="@string/monday"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+      <CheckBox
+          android:id="@+id/checkBox4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="-8dp"
+          android:text="@string/tuesday"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+      <CheckBox
+          android:id="@+id/checkBox5"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="-8dp"
+          android:text="@string/wednesday"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+
+      <CheckBox
+          android:id="@+id/checkBox7"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="-8dp"
+          android:text="@string/thursday"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
+
+      <CheckBox
+          android:id="@+id/checkBox8"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="48dp"
+          android:text="@string/friday"
+          app:layout_constraintStart_toEndOf="@+id/checkBox"
+          app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+      <CheckBox
+          android:id="@+id/checkBox9"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="45dp"
+          android:layout_marginTop="-8dp"
+          android:text="@string/saturday"
+          app:layout_constraintStart_toEndOf="@+id/checkBox4"
+          app:layout_constraintTop_toBottomOf="@+id/checkBox8" />
+
+      <CheckBox
+          android:id="@+id/checkBox10"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:layout_marginTop="-8dp"
+          android:text="@string/sunday"
+          app:layout_constraintStart_toEndOf="@+id/checkBox5"
+          app:layout_constraintTop_toBottomOf="@+id/checkBox9" />
+
+      <EditText
+          android:id="@+id/editTextTextPersonName3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="24dp"
+          android:layout_weight="1"
+          android:width="128dp"
+          android:height="48dp"
+          android:ems="10"
+          android:inputType="textPersonName"
+          android:minHeight="48dp"
+          android:text="@string/start_time"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/checkBox7"
+          android:importantForAutofill="no" />
+
+      <Switch
+          android:id="@+id/switch2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:width="48dp"
+          android:height="48dp"
+          android:showText="true"
+          android:textOff="@string/pm"
+          android:textOn="@string/am"
+          android:textSize="12sp"
+          app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName3"
+          app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName3"
+          tools:checked="false"
+          tools:ignore="DuplicateSpeakableTextCheck" />
+
+      <EditText
+          android:id="@+id/editTextTextPersonName4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:width="128dp"
+          android:height="48dp"
+          android:ems="10"
+          android:importantForAutofill="no"
+          android:inputType="textPersonName"
+          android:minHeight="48dp"
+          android:text="@string/end_time"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+
+      <Switch
+          android:id="@+id/switch3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:width="48dp"
+          android:height="48dp"
+          android:showText="true"
+          android:textOff="@string/pm"
+          android:textOn="@string/am"
+          android:textSize="12sp"
+          app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName4"
+          app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName4" />
+
+      <Switch
+          android:id="@+id/switch1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:height="48dp"
+          android:showText="false"
+          android:text="@string/repeatable"
+          android:textSize="20sp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent">
+
+      </Switch>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
