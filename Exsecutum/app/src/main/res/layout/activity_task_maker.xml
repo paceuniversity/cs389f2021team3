@@ -51,7 +51,7 @@
           app:layout_constraintTop_toTopOf="parent" />
 
       <CheckBox
-          android:id="@+id/checkBox"
+          android:id="@+id/dow_m"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_weight="1"
@@ -60,63 +60,65 @@
           app:layout_constraintTop_toBottomOf="@+id/textView" />
 
       <CheckBox
-          android:id="@+id/checkBox4"
+          android:id="@+id/dow_t"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginTop="-8dp"
           android:text="@string/tuesday"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+          app:layout_constraintTop_toBottomOf="@+id/dow_m" />
 
       <CheckBox
-          android:id="@+id/checkBox5"
+          android:id="@+id/dow_w"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginTop="-8dp"
           android:text="@string/wednesday"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+          app:layout_constraintTop_toBottomOf="@+id/dow_t" />
 
+      <!-- SUNDAY IS REPRESENTED WITH AN R -->
       <CheckBox
-          android:id="@+id/checkBox7"
+          android:id="@+id/dow_r"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginTop="-8dp"
           android:text="@string/thursday"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
+          app:layout_constraintTop_toBottomOf="@+id/dow_w" />
 
       <CheckBox
-          android:id="@+id/checkBox8"
+          android:id="@+id/dow_f"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="48dp"
           android:text="@string/friday"
-          app:layout_constraintStart_toEndOf="@+id/checkBox"
+          app:layout_constraintStart_toEndOf="@+id/dow_m"
           app:layout_constraintTop_toBottomOf="@+id/textView" />
 
       <CheckBox
-          android:id="@+id/checkBox9"
+          android:id="@+id/dow_s"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="45dp"
           android:layout_marginTop="-8dp"
           android:text="@string/saturday"
-          app:layout_constraintStart_toEndOf="@+id/checkBox4"
-          app:layout_constraintTop_toBottomOf="@+id/checkBox8" />
+          app:layout_constraintStart_toEndOf="@+id/dow_t"
+          app:layout_constraintTop_toBottomOf="@+id/dow_f" />
 
+      <!-- SUNDAY IS REPRESENTED WITH A C -->
       <CheckBox
-          android:id="@+id/checkBox10"
+          android:id="@+id/dow_c"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="24dp"
           android:layout_marginTop="-8dp"
           android:text="@string/sunday"
-          app:layout_constraintStart_toEndOf="@+id/checkBox5"
-          app:layout_constraintTop_toBottomOf="@+id/checkBox9" />
+          app:layout_constraintStart_toEndOf="@+id/dow_w"
+          app:layout_constraintTop_toBottomOf="@+id/dow_s" />
 
       <EditText
-          android:id="@+id/editTextTextPersonName3"
+          android:id="@+id/start_time"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginTop="24dp"
@@ -128,11 +130,11 @@
           android:minHeight="48dp"
           android:text="@string/start_time"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/checkBox7"
+          app:layout_constraintTop_toBottomOf="@+id/dow_r"
           android:importantForAutofill="no" />
 
       <Switch
-          android:id="@+id/switch2"
+          android:id="@+id/start_switch"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="8dp"
@@ -142,13 +144,13 @@
           android:textOff="@string/pm"
           android:textOn="@string/am"
           android:textSize="12sp"
-          app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName3"
-          app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName3"
+          app:layout_constraintStart_toEndOf="@+id/start_time"
+          app:layout_constraintTop_toTopOf="@+id/start_time"
           tools:checked="false"
           tools:ignore="DuplicateSpeakableTextCheck" />
 
       <EditText
-          android:id="@+id/editTextTextPersonName4"
+          android:id="@+id/end_time"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginTop="8dp"
@@ -160,10 +162,10 @@
           android:minHeight="48dp"
           android:text="@string/end_time"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+          app:layout_constraintTop_toBottomOf="@+id/start_time" />
 
       <Switch
-          android:id="@+id/switch3"
+          android:id="@+id/end_switch"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="8dp"
@@ -173,11 +175,11 @@
           android:textOff="@string/pm"
           android:textOn="@string/am"
           android:textSize="12sp"
-          app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName4"
-          app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName4" />
+          app:layout_constraintStart_toEndOf="@+id/end_time"
+          app:layout_constraintTop_toTopOf="@+id/end_time" />
 
       <Switch
-          android:id="@+id/switch1"
+          android:id="@+id/repeat"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:height="48dp"
