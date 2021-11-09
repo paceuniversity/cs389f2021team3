@@ -17,4 +17,10 @@
     <string name="pm">pm</string>
     <string name="am">am</string>
     <string name="end_time">End Time</string>
+    <string name="priority">Priority:</string>
+    <string name="not_urgent">Not Urgent</string>
+    <string name="somewhat_urgent">Somewhat Urgent</string>
+    <string name="pretty_urgent">Pretty Urgent</string>
+    <string name="very_urgent">Very Urgent</string>
+    <string name="create_task">Create Task</string>
 </resources>
