@@ -23,6 +23,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     //Declaring variables.
+    private Button daily;
+    private Button weekly;
     private Button newTask;
     private mySQLiteDBHandler dbHandler;
     private String selectedDate;
@@ -69,6 +71,15 @@ public class MainActivity extends AppCompatActivity {
                 launchNewTask();
             }
         });
+
+        //making button handler for viewing a day
+        daily = (Button)findViewById(R.id.ButtonDay);
+        daily.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //go to day screen
+            }
+        });
     }
 
     //This function launches the taskMaker activity.
@@ -76,6 +87,9 @@ public class MainActivity extends AppCompatActivity {
         Intent taskPage = new Intent(this, taskMaker.class);
         startActivity(taskPage);
     }
+
+    //function to switch to daily view
+
 
     //TODO use this function for any fragment that's going to open up a datepicker!
     public void showDatePicker(View view) {
