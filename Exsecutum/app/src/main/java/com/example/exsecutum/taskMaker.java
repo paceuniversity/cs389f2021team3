@@ -17,7 +17,7 @@ to be displayed on the calendar.
  */
 
 public class taskMaker extends AppCompatActivity {
-    ArrayList<Task> tasks = new ArrayList<Task>();
+    static ArrayList<Task> tasks = new ArrayList<Task>();
     EditText taskName;
     Button createTask;
     public static final String TASK_NAME = "com.example.exsecutum.TASK_NAME";
