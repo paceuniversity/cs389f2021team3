@@ -21,38 +21,32 @@ public class Task {
     //priority is rated 1-4: 1 being high, 4 being low
     int priority;
 
+    //This determines if the task is repeatable.
+    boolean repeat;
+
     //ID of task.
     int tId;
 
-    public Task(String nam, String dt, int dow, int start, int end, int pri, int id) {
+    public Task(String nam, String dt, int dow, int start, int end, int pri, boolean rp, int id) {
         this.name = nam;
         this.dayOfWeek = dow;
         this.date= dt;
         this.startTime = start;
         this.endTime = end;
         this.priority = pri;
+        this.repeat = rp;
         this.tId = id;
     }
 
     //These get info from our Task object.
-    public String getName(){
-        return this.name;
-    }
-    public String getDate(){
-        return this.date;
-    }
-    public int getDayOfWeek(){
-        return this.dayOfWeek;
-    }
-    public int getStartTime() {
-        return this.startTime;
-    }
-    public int getEndTime() {
-        return this.endTime;
-    }
-    public int getPriority() {
-        return this.priority;
-    }
+    public String getName() { return this.name; }
+    public String getDate() { return this.date; }
+    public int getDayOfWeek() { return this.dayOfWeek; }
+    public int getStartTime() { return this.startTime; }
+    public int getEndTime() { return this.endTime; }
+    public int getPriority() { return this.priority; }
+    public boolean isRepeatable() { return this.repeat; }
+    public int getID() { return this.tId; }
 
     //This converts the task into byte data.
     public byte[] makebyte(Task t) {
