@@ -21,6 +21,8 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     //Declaring variables.
     private Button daily;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private mySQLiteDBHandler dbHandler;
     private String selectedDate;
     private SQLiteDatabase sqLiteDatabase;
+    private String taskName;
 
     //Creating instance of main activity.
     @Override
@@ -56,12 +59,17 @@ public class MainActivity extends AppCompatActivity {
         try {
             dbHandler = new mySQLiteDBHandler(this, "CalendarDatabase", null, 1);
             sqLiteDatabase = dbHandler.getWritableDatabase();
-            sqLiteDatabase.execSQL("CREATE TABLE TaskCalendar(Date TEXT, Task TEXT)");
+            sqLiteDatabase.execSQL("CREATE TABLE TaskCalendar(ID BLOB)");
         }
         //Send an error if we can't create a database.
         catch (Exception e) {
             e.printStackTrace();
         }
+
+        //recieving the intent from creating a task
+        Intent fromTaskMaker = getIntent();
+        taskName = fromTaskMaker.getStringExtra(taskMaker.TASK_NAME);
+
 
         //Setting up a 'new task' button to switch to the task maker page.
         newTask = (Button)findViewById(R.id.buttonNewTask);
@@ -110,49 +118,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //This function will insert tasks into our database.
-    public void InsertDatabase(View view) {
-        ContentValues contentValues = new ContentValues();
-
-        //TODO if you move mainCalendarView.setOnDateChangeListener() to a different activity, this must be edited!
-        contentValues.put("Date", selectedDate);
-
-        //TODO replace [COMPONENT_NAME] with the name of the component that takes the name of the task!
-        contentValues.put("Task", [COMPONENT_NAME].getText().toString());
-        sqLiteDatabase.insert("TaskCalendar", null, contentValues);
+    public void InsertDatabase(byte data) {
+        ContentValues contentValue = new ContentValues();
+        contentValue.put("ID", data);
+        sqLiteDatabase.insert("TaskCalendar", null, contentValue);
     }
 
-    //This function reads all of the tasks that are stored within our database.
-    public void ReadDatabase(View view) {
-        //TODO once again, selectedDate would have to be edited if you move mainCalendarView.setOnDateChangeListener() to a different activity!
-        String query = "Select Task from TaskCalendar where Date=" + selectedDate;
+    //This function reads all of the tasks that are stored within our database. This returns an
+    //array of tasks.
+    public ArrayList<Task> ReadDatabase(byte data) {
+        String query = "Select * from TaskCalendar where ID=" + data;
         try {
             //This acts as a pointer for our database.
             Cursor cursor = sqLiteDatabase.rawQuery(query, null);
 
-            //Create a string to get all of the task names in order.
-            String results = "";
+            //Create a byte array to get all of the task names in order.
+            ArrayList<Task> results = new ArrayList<Task>();
+            Task converter = null;
 
             //Getting and outputting all tasks that were created on selectedDate.
             if(cursor.moveToFirst()) {
                 while(!cursor.isAfterLast()) {
                     //Adding task name to results.
-                    results += cursor.getString(0) + "\n";
+                    byte[] tdata = cursor.getBlob(0);
+                    converter = converter.read(tdata);
+                    results.add(converter);
 
                     //Moving to the next task if it's not null.
                     cursor.moveToNext();
                 }
             }
 
-            //TODO once again, replace [COMPONENT_NAME] with the name of the component that takes the name of the tasks!
-            [COMPONENT_NAME].setText(results);
-
+            //Returning all relevant task as an array.
+            return results;
         }
         //Send an error if we can't read a task from the database.
         catch (Exception e) {
             e.printStackTrace();
-
-            //TODO once again, replace [COMPONENT_NAME] with the name of the component that takes the name of the task!
-            [COMPONENT_NAME].setText("");
         }
+        return null;
     }
 }
