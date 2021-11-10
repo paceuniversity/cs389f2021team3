@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     //This function reads all of the tasks that are stored within our database.
     public void ReadDatabase(View view) {
         //TODO once again, selectedDate would have to be edited if you move mainCalendarView.setOnDateChangeListener() to a different activity!
-        String query = "Select Event from TaskCalendar where Date=" + selectedDate;
+        String query = "Select Task from TaskCalendar where Date=" + selectedDate;
         try {
             Cursor cursor = sqLiteDatabase.rawQuery(query, null);
             cursor.moveToFirst();
