@@ -22,14 +22,20 @@ import android.widget.CalendarView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     //Declaring variables.
+    private Button daily;
+    private Button weekly;
     private Button newTask;
     private mySQLiteDBHandler dbHandler;
     private String selectedDate;
+    private int dateInt;
     private SQLiteDatabase sqLiteDatabase;
     private String taskName;
+    public HashMap<Integer, ArrayList<Task>> tasks;
+
 
     //Creating instance of main activity.
     @Override
@@ -51,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int y, int m, int d) {
                 selectedDate = Integer.toString(y) + Integer.toString(m) + Integer.toString(d);
+                dateInt = y + m + d;
             }
         });
         //Creating the database for our tasks.
@@ -77,6 +84,21 @@ public class MainActivity extends AppCompatActivity {
                 launchNewTask();
             }
         });
+
+        //making button handler for viewing a day
+        daily = findViewById(R.id.ButtonDay);
+        daily.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchDayPage();
+            }
+        });
+    }
+
+    //This function launches the taskMaker activity.
+    private void launchDayPage() {
+        Intent dayPage = new Intent(this, DailyView.class);
+        startActivity(dayPage);
     }
 
     //This function launches the taskMaker activity.
@@ -84,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
         Intent taskPage = new Intent(this, taskMaker.class);
         startActivity(taskPage);
     }
+
+    //function to switch to daily view
+
 
     //TODO use this function for any fragment that's going to open up a datepicker!
     public void showDatePicker(View view) {

@@ -6,10 +6,16 @@
         <entry key="..\:/Users/Spencer/cs389f2021team3/Exsecutum/app/src/main/res/layout/activity_main.xml" value="0.28940217391304346" />
 <<<<<<< Updated upstream
         <entry key="..\:/Users/Spencer/cs389f2021team3/Exsecutum/app/src/main/res/layout/activity_task_maker.xml" value="0.2391304347826087" />
+<<<<<<< HEAD
+        <entry key="app/src/main/res/layout/activity_daily_view.xml" value="0.29483695652173914" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.29483695652173914" />
+        <entry key="app/src/main/res/layout/activity_task_maker.xml" value="0.29483695652173914" />
+=======
 =======
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_task_maker.xml" value="0.25" />
 >>>>>>> Stashed changes
+>>>>>>> a2a011808e7e4efff315d7e0067ab6295cbd4e3a
       </map>
     </option>
   </component>
