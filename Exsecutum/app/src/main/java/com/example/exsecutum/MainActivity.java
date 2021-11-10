@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private mySQLiteDBHandler dbHandler;
     private String selectedDate;
     private SQLiteDatabase sqLiteDatabase;
+    private String taskName;
 
     //Creating instance of main activity.
     @Override
@@ -60,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
         catch (Exception e) {
             e.printStackTrace();
         }
+
+        //recieving the intent from creating a task
+        Intent fromTaskMaker = getIntent();
+        taskName = fromTaskMaker.getStringExtra(taskMaker.TASK_NAME);
+
 
         //Setting up a 'new task' button to switch to the task maker page.
         newTask = (Button)findViewById(R.id.buttonNewTask);
@@ -103,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         contentValues.put("Date", selectedDate);
 
         //TODO replace [COMPONENT_NAME] with the name of the component that takes the name of the task!
-        contentValues.put("Task", [COMPONENT_NAME].getText().toString());
+        contentValues.put("Task", taskName);
         sqLiteDatabase.insert("TaskCalendar", null, contentValues);
     }
 
@@ -130,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //TODO once again, replace [COMPONENT_NAME] with the name of the component that takes the name of the tasks!
-            [COMPONENT_NAME].setText(results);
+           // [COMPONENT_NAME].setText(results);
 
         }
         //Send an error if we can't read a task from the database.
@@ -138,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
 
             //TODO once again, replace [COMPONENT_NAME] with the name of the component that takes the name of the task!
-            [COMPONENT_NAME].setText("");
+          //  [COMPONENT_NAME].setText("");
         }
     }
 }
