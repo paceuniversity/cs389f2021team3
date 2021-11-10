@@ -33,20 +33,17 @@ Planner app meant for people with executive functioning shortcomings. The app wi
 * [Sprint planning](https://docs.google.com/document/d/1aSAEQIJETiOKDVui8fGTCP29XGbD5trmkDVTnNCeAdc/edit)
 * [Scrum Meeting 1](https://docs.google.com/document/d/1hF4m6-QBozLeWnDzdEr8M4rEcB4mBclU2yeIDCk1Aqo/edit)
 * [Scrum Meeting 2](https://docs.google.com/document/d/10hOitFtCh7Xq1vxttVCNlGwwtLoHDBtKkRLMR2tiqAs/edit)
-* Sprint demo - video and apk (or equivalent)
-* Spring retrospective
+* [Sprint retrospective (Includes video & apk)](https://docs.google.com/document/d/1GCoVjCEITm7JXMylXUU0DmRgvR9l6jNI_qJFnAnhYbs/edit)
 
 ### Sprint 2
 * Sprint planning
 * Scrums
-* Sprint demo - video and apk (or equivalent)
-* Spring retrospective
+* Sprint retrospective (Includes video & apk)
 
 ### Sprint 3 
 * Sprint planning
 * Scrums
-* Sprint demo - video and apk (or equivalent)
-* Spring retrospective
+* Sprint retrospective (Includes video & apk)
 
 ## Final presentation
 December 20th, 2021
