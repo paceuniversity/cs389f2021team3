@@ -110,13 +110,28 @@ public class MainActivity extends AppCompatActivity {
     //This function reads all of the tasks that are stored within our database.
     public void ReadDatabase(View view) {
         //TODO once again, selectedDate would have to be edited if you move mainCalendarView.setOnDateChangeListener() to a different activity!
-        String query = "Select Event from TaskCalendar where Date=" + selectedDate;
+        String query = "Select Task from TaskCalendar where Date=" + selectedDate;
         try {
+            //This acts as a pointer for our database.
             Cursor cursor = sqLiteDatabase.rawQuery(query, null);
-            cursor.moveToFirst();
 
-            //TODO once again, replace [COMPONENT_NAME] with the name of the component that takes the name of the task!
-            [COMPONENT_NAME].setText(cursor.getString(0));
+            //Create a string to get all of the task names in order.
+            String results = "";
+
+            //Getting and outputting all tasks that were created on selectedDate.
+            if(cursor.moveToFirst()) {
+                while(!cursor.isAfterLast()) {
+                    //Adding task name to results.
+                    results += cursor.getString(0) + "\n";
+
+                    //Moving to the next task if it's not null.
+                    cursor.moveToNext();
+                }
+            }
+
+            //TODO once again, replace [COMPONENT_NAME] with the name of the component that takes the name of the tasks!
+            [COMPONENT_NAME].setText(results);
+
         }
         //Send an error if we can't read a task from the database.
         catch (Exception e) {
