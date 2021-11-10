@@ -13,13 +13,13 @@
       android:layout_marginTop="32dp"
       android:ems="10"
       android:gravity="center"
+      android:hint="@string/task_name"
+      android:importantForAutofill="no"
       android:inputType="textPersonName"
-      android:text="@string/task_name"
       android:textSize="24sp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      android:importantForAutofill="no" />
+      app:layout_constraintTop_toTopOf="parent" />
 
   <ScrollView
       android:id="@+id/scrollView2"
@@ -126,10 +126,10 @@
           android:width="128dp"
           android:height="48dp"
           android:ems="10"
+          android:hint="@string/start_time"
           android:importantForAutofill="no"
           android:inputType="textPersonName"
           android:minHeight="48dp"
-          android:text="@string/start_time"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/dow_r" />
 
@@ -157,10 +157,10 @@
           android:width="128dp"
           android:height="48dp"
           android:ems="10"
+          android:hint="@string/end_time"
           android:importantForAutofill="no"
           android:inputType="textPersonName"
           android:minHeight="48dp"
-          android:text="@string/end_time"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/start_time" />
 
@@ -223,7 +223,7 @@
             android:text="@string/somewhat_urgent" />
 
         <RadioButton
-            android:id="@+id/semo_high"
+            android:id="@+id/semi_high"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/pretty_urgent" />
