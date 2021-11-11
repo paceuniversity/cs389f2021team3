@@ -24,21 +24,36 @@ public class Task {
     //This determines if the task is repeatable.
     boolean repeat;
 
+    //This determines the color of the task.
+    int clr;
+
     //ID of task.
     int tId;
 
-    public Task(String nam, String dt, int dow, int start, int end, int pri, boolean rp, int id) {
+    //Constructor Class.
+    public Task(String nam, String dt, int id) {
         this.name = nam;
-        this.dayOfWeek = dow;
         this.date= dt;
-        this.startTime = start;
-        this.endTime = end;
-        this.priority = pri;
-        this.repeat = rp;
         this.tId = id;
+        this.dayOfWeek = -1;
+        this.startTime = 0;
+        this.endTime = 0;
+        this.priority = 0;
+        this.repeat = false;
+        this.clr = 0;
     }
 
-    //These get info from our Task object.
+    //These functions set info for out Task object.
+    public void setName(String nam) { this.name = nam; }
+    public void setDate(String dt) { this.date = dt; }
+    public void setDoW(int dow) { this.dayOfWeek = dow; }
+    public void setStartTime(int start) { this.startTime = start; }
+    public void setEndTime(int end) { this.endTime = end; }
+    public void setPriority(int pri) { this.priority = pri; }
+    public void setRepeat(boolean rp) { this.repeat = rp; }
+    public void setColor(int c) { this.clr = c; }
+
+    //These functions get info from our Task object.
     public String getName() { return this.name; }
     public String getDate() { return this.date; }
     public int getDayOfWeek() { return this.dayOfWeek; }
@@ -46,6 +61,7 @@ public class Task {
     public int getEndTime() { return this.endTime; }
     public int getPriority() { return this.priority; }
     public boolean isRepeatable() { return this.repeat; }
+    public int getColor() { return this.clr; }
     public int getID() { return this.tId; }
 
     //This converts the task into byte data.
