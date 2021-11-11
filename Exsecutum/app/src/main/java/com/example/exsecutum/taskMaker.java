@@ -61,7 +61,6 @@ public class taskMaker extends AppCompatActivity {
 
         //TODO add proper implementation of data for the tasks!
         //Declaring variables.
-        //TODO prevent the user from making a task if there's no name for the task!
         String name = taskName.getText().toString();
 
         //TODO
@@ -71,7 +70,6 @@ public class taskMaker extends AppCompatActivity {
         //Setting up day of week.
         int dow = 0;
 
-        //TODO prevent the user from making a task if they either didn't selected a data or a checkbox for dow!
         //Checking to see if the user has selected any of the checkboxes for the day of week.
         for(int i = 0; i < dowcb.size(); ++i) {
             //If we have a checked box, add an additional digit to the left of our dow int. This is
@@ -442,10 +440,14 @@ public class taskMaker extends AppCompatActivity {
         if(repeatSwitch.isChecked())
             rp = true;
 
+        //TODO implement color ID system!
+        //Assigning color of task.
+        int c = 0;
+
         //Assigning id of task.
         int id = tid;
 
-        //Increment id
+        //Increment id.
         ++tid;
 
         //If the there's no name for the task, don't create the task and display the why the task
@@ -475,11 +477,20 @@ public class taskMaker extends AppCompatActivity {
 
         //Creating a task object.
         else {
-            Task task = new Task(name, dt, dow, start, end, pri, rp, id);
+            Task task = new Task(name, dt, id);
+
+            //Assigning values to our newly created task.
+            task.setDoW(dow);
+            task.setStartTime(start);
+            task.setEndTime(end);
+            task.setPriority(pri);
+            task.setRepeat(rp);
+            task.setColor(c);
 
             //Assigning the task to the tasks ArrayList.
             tasks.add(task);
 
+            //Opening up Main Activity.
             mainPage.putExtra(TASK_NAME, name);
             startActivity(mainPage);
         }
