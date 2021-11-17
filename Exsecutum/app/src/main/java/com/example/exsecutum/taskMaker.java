@@ -3,6 +3,7 @@ package com.example.exsecutum;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +13,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.Toast;
-
+import com.example.exsecutum.Task;
 import java.util.ArrayList;
 
 /*
@@ -27,8 +28,8 @@ public class taskMaker extends AppCompatActivity {
     ArrayList<CheckBox> dowcb = new ArrayList<CheckBox>();
     Button createTask;
     EditText taskName, startTime, endTime;
-    RadioButton selectedRadioButton;
-    RadioGroup pGroup;
+    RadioButton selectedRadioButton, selectedColor;
+    RadioGroup pGroup, colorGroup;
     Switch meridiemSwitch, repeatSwitch;
     public static final String TASK_NAME = "com.example.exsecutum.TASK_NAME";
     private int tid;
@@ -440,9 +441,51 @@ public class taskMaker extends AppCompatActivity {
         if(repeatSwitch.isChecked())
             rp = true;
 
-        //TODO implement color ID system!
+
         //Assigning color of task.
         int c = 0;
+        colorGroup = (RadioGroup) findViewById(R.id.color_select);
+        //  By default the color will be white if no color is chosen
+        if (colorGroup.getCheckedRadioButtonId() == -1){
+            c = Color.WHITE;
+        }
+        else{
+            //color assignment by selection
+            int colorId =  colorGroup.getCheckedRadioButtonId();
+            selectedColor = (RadioButton) findViewById(colorId);
+
+            switch (colorId){
+                case R.id.color_red:
+                    if(selectedColor.isChecked())
+                        c = Color.rgb(209, 15,15);
+                    break;
+
+                case R.id.color_blue:
+                    if(selectedColor.isChecked())
+                        c = Color.rgb(13, 121,209);
+                    break;
+
+                case R.id.color_green:
+                    if(selectedColor.isChecked())
+                        c = Color.rgb(23,138,54);
+                    break;
+
+                case R.id.color_orange:
+                    if(selectedColor.isChecked())
+                        c = Color.rgb(255,125, 25);
+                    break;
+
+                case R.id.color_purple:
+                    if(selectedColor.isChecked())
+                        c = Color.rgb(157, 15, 209);
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+
 
         //Assigning id of task.
         int id = tid;
