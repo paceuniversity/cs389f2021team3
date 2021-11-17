@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 public class Task {
     String name;
 
-    //member for if the task is complete
+    //data member for if the task is complete
     Boolean complete;
 
     //these variables will need to be translated for the calendar view
