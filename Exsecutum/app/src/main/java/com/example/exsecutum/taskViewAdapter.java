@@ -32,6 +32,7 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
     public void onBindViewHolder(@NonNull taskHolder holder, int position) {
         holder.taskName.setText(tasks.get(position).getName());
         holder.dueDate.setText(tasks.get(position).getDate());
+        holder.color = tasks.get(position).getColor();
     }
 
     @Override
@@ -43,10 +44,12 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
     public class taskHolder extends RecyclerView.ViewHolder {
 
         TextView taskName, dueDate;
+        int color;
         public taskHolder(@NonNull View itemView) {
             super(itemView);
             taskName = itemView.findViewById(R.id.taskName);
             dueDate = itemView.findViewById(R.id.dueDate);
+            color = R.color.task_background;
         }
     }
 }
