@@ -6,6 +6,7 @@ import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,7 +36,6 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
         holder.taskName.setText(tasks.get(position).getName());
         holder.dueDate.setText(tasks.get(position).getDate());
         holder.taskHold.setBackgroundColor(tasks.get(position).getColor());
-
     }
 
     @Override
@@ -48,11 +48,13 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
 
         TextView taskName, dueDate;
         View taskHold;
+        Button taskComplete;
         public taskHolder(@NonNull View itemView) {
             super(itemView);
             taskName = itemView.findViewById(R.id.taskName);
             dueDate = itemView.findViewById(R.id.dueDate);
             taskHold = itemView.findViewById(R.id.taskHolder);
+            taskComplete = itemView.findViewById(R.id.complete);
         }
     }
 }

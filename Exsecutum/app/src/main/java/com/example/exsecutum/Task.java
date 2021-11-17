@@ -10,6 +10,9 @@ import java.io.ObjectOutputStream;
 public class Task {
     String name;
 
+    //data member for if the task is complete
+    Boolean complete;
+
     //these variables will need to be translated for the calendar view
     int dayOfWeek;
     String date;
@@ -41,6 +44,7 @@ public class Task {
         this.priority = 0;
         this.repeat = false;
         this.clr = 0;
+        this.complete = false;
     }
 
     //These functions set info for out Task object.
@@ -52,6 +56,7 @@ public class Task {
     public void setPriority(int pri) { this.priority = pri; }
     public void setRepeat(boolean rp) { this.repeat = rp; }
     public void setColor(int c) { this.clr = c; }
+    public void setComplete () { this.complete = !this.complete; }
 
     //These functions get info from our Task object.
     public String getName() { return this.name; }
@@ -63,6 +68,7 @@ public class Task {
     public boolean isRepeatable() { return this.repeat; }
     public int getColor() { return this.clr; }
     public int getID() { return this.tId; }
+    public Boolean getComplete() { return this.complete; }
 
     //This converts the task into byte data.
     public byte[] makebyte(Task t) {
