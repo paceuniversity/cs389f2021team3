@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        //recieving the intent from creating a task
+        //recieving the intent from creating a task, then storing the name that was sent over
         Intent fromTaskMaker = getIntent();
         taskName = fromTaskMaker.getStringExtra(taskMaker.TASK_NAME);
 
