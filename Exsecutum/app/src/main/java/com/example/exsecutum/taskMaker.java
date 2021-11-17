@@ -445,47 +445,53 @@ public class taskMaker extends AppCompatActivity {
         //Assigning color of task.
         int c = 0;
         colorGroup = (RadioGroup) findViewById(R.id.color_select);
-        //  By default the color will be white if no color is chosen
-        if (colorGroup.getCheckedRadioButtonId() == -1){
+
+        //By default the color will be white if no color is chosen.
+        if (colorGroup.getCheckedRadioButtonId() == -1) {
             c = Color.WHITE;
         }
-        else{
-            //color assignment by selection
+
+        //Color assignment by selection.
+        else {
             int colorId =  colorGroup.getCheckedRadioButtonId();
             selectedColor = (RadioButton) findViewById(colorId);
 
-            switch (colorId){
+            switch (colorId) {
+                //Red Task.
                 case R.id.color_red:
                     if(selectedColor.isChecked())
                         c = Color.rgb(209, 15,15);
                     break;
 
+                //Blue Task.
                 case R.id.color_blue:
                     if(selectedColor.isChecked())
                         c = Color.rgb(13, 121,209);
                     break;
 
+                //Green Task.
                 case R.id.color_green:
                     if(selectedColor.isChecked())
                         c = Color.rgb(23,138,54);
                     break;
 
+                //Orange Task.
                 case R.id.color_orange:
                     if(selectedColor.isChecked())
                         c = Color.rgb(255,125, 25);
                     break;
 
+                //Purple Task.
                 case R.id.color_purple:
                     if(selectedColor.isChecked())
                         c = Color.rgb(157, 15, 209);
                     break;
 
+                //Do nothing as default.
                 default:
                     break;
             }
-
         }
-
 
         //Assigning id of task.
         int id = tid;

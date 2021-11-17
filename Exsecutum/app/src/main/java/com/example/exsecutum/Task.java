@@ -10,18 +10,18 @@ import java.io.ObjectOutputStream;
 public class Task {
     String name;
 
-    //data member for if the task is complete
+    //Data member for if the task is complete.
     Boolean complete;
 
-    //these variables will need to be translated for the calendar view
+    //These variables will need to be translated for the calendar view.
     int dayOfWeek;
     String date;
 
-    //times will automatically be in military time, can be converted for the cal. view
+    //Times will automatically be in military time, can be converted for the calendar view.
     int startTime;
     int endTime;
 
-    //priority is rated 1-4: 1 being high, 4 being low
+    //Priority is rated 1-4: 1 being high, 4 being low.
     int priority;
 
     //This determines if the task is repeatable.
@@ -56,7 +56,7 @@ public class Task {
     public void setPriority(int pri) { this.priority = pri; }
     public void setRepeat(boolean rp) { this.repeat = rp; }
     public void setColor(int c) { this.clr = c; }
-    public void setComplete () { this.complete = !this.complete; }
+    public void setComplete(boolean cmplt) { this.complete = cmplt; }
 
     //These functions get info from our Task object.
     public String getName() { return this.name; }
