@@ -1,6 +1,8 @@
 package com.example.exsecutum;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +34,8 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
     public void onBindViewHolder(@NonNull taskHolder holder, int position) {
         holder.taskName.setText(tasks.get(position).getName());
         holder.dueDate.setText(tasks.get(position).getDate());
-        holder.color = tasks.get(position).getColor();
+        holder.taskHold.setBackgroundColor(tasks.get(position).getColor());
+
     }
 
     @Override
@@ -44,12 +47,12 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
     public class taskHolder extends RecyclerView.ViewHolder {
 
         TextView taskName, dueDate;
-        int color;
+        View taskHold;
         public taskHolder(@NonNull View itemView) {
             super(itemView);
             taskName = itemView.findViewById(R.id.taskName);
             dueDate = itemView.findViewById(R.id.dueDate);
-            color = R.color.task_background;
+            taskHold = itemView.findViewById(R.id.taskHolder);
         }
     }
 }
