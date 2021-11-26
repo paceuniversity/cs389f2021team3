@@ -31,21 +31,20 @@ Planner app meant for people with executive functioning shortcomings. The app wi
 ## Content
 ### Sprint 1
 * [Sprint planning](https://docs.google.com/document/d/1aSAEQIJETiOKDVui8fGTCP29XGbD5trmkDVTnNCeAdc/edit)
-* [Scrums](https://docs.google.com/document/d/1hF4m6-QBozLeWnDzdEr8M4rEcB4mBclU2yeIDCk1Aqo/edit)
-* Sprint demo - video and apk (or equivalent)
-* Spring retrospective
+* [Scrum Meeting 1](https://docs.google.com/document/d/1hF4m6-QBozLeWnDzdEr8M4rEcB4mBclU2yeIDCk1Aqo/edit)
+* [Scrum Meeting 2](https://docs.google.com/document/d/10hOitFtCh7Xq1vxttVCNlGwwtLoHDBtKkRLMR2tiqAs/edit)
+* [Sprint retrospective (Includes video & apk)](https://docs.google.com/document/d/1GCoVjCEITm7JXMylXUU0DmRgvR9l6jNI_qJFnAnhYbs/edit)
 
 ### Sprint 2
-* Sprint planning
-* Scrums
-* Sprint demo - video and apk (or equivalent)
-* Spring retrospective
+* [Sprint planning](https://docs.google.com/document/d/12uRj_HOMMPnnE7JZl5KvKEaFxIPGB0wt2hKvnB2qeKs/edit)
+* [Scrum Meeting 3](https://docs.google.com/document/d/1jn2TXWQILS3C9xxQBq4Wv7JygFOPMbXoDsE0aD-Srok/edit?usp=sharing)
+* [Scrum Meeting 4](https://docs.google.com/document/d/1qnrXeaQ08Arnq0ShE7o_4sMuHkR-3xtvxkok_21X6kw/edit?usp=sharing)
+* Sprint retrospective (Includes video & apk)
 
 ### Sprint 3 
 * Sprint planning
 * Scrums
-* Sprint demo - video and apk (or equivalent)
-* Spring retrospective
+* Sprint retrospective (Includes video & apk)
 
 ## Final presentation
 December 20th, 2021
