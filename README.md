@@ -62,4 +62,3 @@ Team 3 will be using the Agile approach to complete this project. There will be 
 
 ## Tools
 <img src="https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=764" width="25%" height="25%">
- 
