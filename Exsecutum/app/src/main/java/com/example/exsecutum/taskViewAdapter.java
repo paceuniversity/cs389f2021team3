@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
     Context context;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
+    //TODO: sort the tasks by due date as secondary option, may need to implement a separate function
     public taskViewAdapter(Context context, ArrayList<Task> tasks){
         this.context = context;
         tasks.sort((t1, t2) -> {        //'compareTo' method did not want to work so Im manually comparing .-.
@@ -33,7 +35,10 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
             else //eventually will need to compare by due date
                 return -1;
         });
-        this.tasks = tasks;     //tasks is sorted by priority now
+        //tasks is sorted by priority now, I created a 'new' list so the
+        //completion of tasks doesn't interfere with the database
+        this.tasks = new ArrayList(tasks) ;
+
 
     }
     @NonNull
@@ -74,18 +79,22 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
         return tasks.size();
     }
     //this is the actual contents of each individual displayed task
-    //TODO: need to add more data members and implement the color display for each task
+    //TODO: need to add more data members (due date especially)
     public class taskHolder extends RecyclerView.ViewHolder {
 
         TextView taskName, dueDate;
         View taskHold;
-        Button taskComplete;
+        CheckBox taskComplete;
         public taskHolder(@NonNull View itemView) {
             super(itemView);
             taskName = itemView.findViewById(R.id.taskName);
             dueDate = itemView.findViewById(R.id.dueDate);
             taskHold = itemView.findViewById(R.id.taskHolder);
             taskComplete = itemView.findViewById(R.id.complete);
+
+
+
         }
+
     }
 }
