@@ -5,16 +5,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.Collection;
 
 //This class is a representation of a singular task in the app
 public class Task {
-    //This sets the name of the task.
     String name;
-
-    //This creates a container to store sub-tasks within this task.
-    ArrayList<Task> subTask;
 
     //Data member for if the task is complete.
     Boolean complete;
@@ -51,7 +45,6 @@ public class Task {
         this.repeat = false;
         this.clr = 0;
         this.complete = false;
-        this.subTask = new ArrayList<Task>();
     }
 
     //These functions set info for out Task object.
@@ -64,7 +57,6 @@ public class Task {
     public void setRepeat(boolean rp) { this.repeat = rp; }
     public void setColor(int c) { this.clr = c; }
     public void setComplete(boolean cmplt) { this.complete = cmplt; }
-    public void setSubTasks(ArrayList<Task> stasks) { this.subTask = stasks; }
 
     //These functions get info from our Task object.
     public String getName() { return this.name; }
@@ -77,8 +69,6 @@ public class Task {
     public int getColor() { return this.clr; }
     public int getID() { return this.tId; }
     public Boolean getComplete() { return this.complete; }
-    public ArrayList<Task> getSubTasks() { return this.subTask; }
-
 
     //This converts the task into byte data.
     public byte[] makebyte(Task t) {
