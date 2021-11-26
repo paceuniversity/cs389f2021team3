@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -48,6 +49,24 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
         holder.taskName.setText(tasks.get(position).getName());
         holder.dueDate.setText(tasks.get(position).getDate());
         holder.taskHold.setBackgroundColor(tasks.get(position).getColor());
+
+        //task completion functionality TODO: make sure accidental checks can be undone
+        int pos = position;
+        holder.taskComplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (((CompoundButton) view).isChecked()){
+                    tasks.get(pos).setComplete(true);
+                    //it's necessary to delete the task from the list so an empty taskHolder
+                    //does not display on the view (why I made a copy of the ArrayList)
+                    tasks.remove(pos);
+                    notifyItemRemoved(pos);
+                    notifyItemRangeChanged(pos, tasks.size());
+                }
+                else
+                    tasks.get(pos).setComplete(false);
+            }
+        });
     }
 
     @Override
