@@ -12,7 +12,7 @@ public class DailyView extends AppCompatActivity {
     //this class is the actual scrolling list of tasks using recyclerview
     //TODO: implement the actual date based display, for now it's just displaying all tasks (this is fine for sprint 1)
     RecyclerView taskView;
-    ArrayList<Task> tasks = new ArrayList<>();
+    //ArrayList<Task> tasks = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
