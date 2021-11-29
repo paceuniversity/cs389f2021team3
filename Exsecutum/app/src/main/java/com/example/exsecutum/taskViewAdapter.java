@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 //the purpose of this class is to extend recyclerview so I can actually use it with the tasks
 public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHolder>{
-
+    //to make this display dates we need to pass in a date at some point
     private final ArrayList<Task> tasks;
     Context context;
 
@@ -32,6 +32,7 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
     }
 
     @Override
+    //this is essentially feeding the data into each individual task item
     public void onBindViewHolder(@NonNull taskHolder holder, int position) {
         holder.taskName.setText(tasks.get(position).getName());
         holder.dueDate.setText(tasks.get(position).getDate());
@@ -42,6 +43,7 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
     public int getItemCount() {
         return tasks.size();
     }
+
     //this is the actual contents of each individual displayed task
     //TODO: need to add more data members and implement the color display for each task
     public class taskHolder extends RecyclerView.ViewHolder {

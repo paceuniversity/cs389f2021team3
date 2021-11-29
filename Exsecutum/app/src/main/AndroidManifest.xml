@@ -13,6 +13,9 @@
             android:name=".DailyView"
             android:exported="false" />
         <activity
+            android:name=".MonthlyView"
+            android:exported="false" />
+        <activity
             android:name=".taskMaker"
             android:exported="false"
             android:label="Task Maker"

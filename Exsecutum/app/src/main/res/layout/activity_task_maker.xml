@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".taskMaker">
+    tools:context=".taskMaker"
+    >
 
   <EditText
       android:id="@+id/editTextTaskName"
@@ -292,6 +293,16 @@
             android:layout_height="wrap_content"
             android:text="Purple" />
       </RadioGroup>
+
+      <Button
+          android:id="@+id/createDate"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="#FFFFFF"
+          android:text="Date"
+          android:onClick="showDatePicker"
+          app:layout_constraintStart_toStartOf="@+id/color_select"
+          app:layout_constraintTop_toBottomOf="@+id/color_select" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

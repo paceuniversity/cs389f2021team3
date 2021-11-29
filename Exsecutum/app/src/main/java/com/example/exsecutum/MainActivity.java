@@ -93,9 +93,25 @@ public class MainActivity extends AppCompatActivity {
                 launchDayPage();
             }
         });
+
+        //button for viewing a month
+        daily = findViewById(R.id.ButtonMonth);
+        daily.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchMonthPage();
+            }
+        });
+
     }
 
-    //This function launches the taskMaker activity.
+    //This function launches the monthView Activity
+    private void launchMonthPage() {
+        Intent monthPage = new Intent(this, MonthlyView.class);
+        startActivity(monthPage);
+    }
+
+    //This function launches the taskView activity
     private void launchDayPage() {
         Intent dayPage = new Intent(this, DailyView.class);
         startActivity(dayPage);
