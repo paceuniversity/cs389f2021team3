@@ -5,13 +5,10 @@ import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.time.*;
-
-public class MonthlyView extends AppCompatActivity {
+public class WeeklyView extends AppCompatActivity {
     //this class is the actual scrolling list of tasks using recyclerview
     RecyclerView taskView;
     //ArrayList<Task> tasks = new ArrayList<>();
@@ -23,7 +20,7 @@ public class MonthlyView extends AppCompatActivity {
 
         taskView = findViewById(R.id.taskView);
 
-        taskViewAdapter adapter = new taskViewAdapter(this, taskMaker.tasks, 'M');
+        taskViewAdapter adapter = new taskViewAdapter(this, taskMaker.tasks, 'W');
 
         taskView.setAdapter(adapter);
         taskView.setLayoutManager(new LinearLayoutManager(this));

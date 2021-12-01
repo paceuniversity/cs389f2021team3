@@ -1,9 +1,12 @@
 package com.example.exsecutum;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +17,8 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.Toast;
 import com.example.exsecutum.Task;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /*
@@ -26,13 +31,14 @@ public class taskMaker extends AppCompatActivity {
     //Declaring variables.
     static ArrayList<Task> tasks = new ArrayList<Task>();
     ArrayList<CheckBox> dowcb = new ArrayList<CheckBox>();
-    Button createTask;
+    Button createTask, pickDate;
     EditText taskName, startTime, endTime;
     RadioButton selectedRadioButton, selectedColor;
     RadioGroup pGroup, colorGroup;
     Switch meridiemSwitch, repeatSwitch;
     public static final String TASK_NAME = "com.example.exsecutum.TASK_NAME";
     private int tid;
+    private LocalDate date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +62,18 @@ public class taskMaker extends AppCompatActivity {
         });
     }
 
+    //handles the date picker dialogue
+    public void showDatePicker(View view) {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), getString(R.string.calendar_label));
+    }
+
+    //this assigns the date locally
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void processDatePickerResult(int y, int m, int d) {
+        date = LocalDate.of(y, m + 1, d);
+    }
+
     //This creates a task once the user presses "Create Task."
     public void sendTask() {
         Intent mainPage = new Intent(this, MainActivity.class);
@@ -64,9 +82,6 @@ public class taskMaker extends AppCompatActivity {
         //Declaring variables.
         String name = taskName.getText().toString();
 
-        //TODO
-        //Use datepicker for this.
-        String dt = "TODO";
 
         //Setting up day of week.
         int dow = 0;
@@ -506,8 +521,8 @@ public class taskMaker extends AppCompatActivity {
 
         //If the there's no date for the task, don't create the task and display the why the task
         //wasn't created.
-        else if(dt == null || dt.equals(""))
-            Toast.makeText(getApplicationContext(), "Please enter a date for your task", Toast.LENGTH_SHORT).show();
+        //else if(dt == null || dt.equals(""))
+        //    Toast.makeText(getApplicationContext(), "Please enter a date for your task", Toast.LENGTH_SHORT).show();
 
         //If the start or end time is -1 or if the start time is grater than or equal to the end
         //time, don't create the task and display the why the task wasn't created.
@@ -526,7 +541,7 @@ public class taskMaker extends AppCompatActivity {
 
         //Creating a task object.
         else {
-            Task task = new Task(name, dt, id);
+            Task task = new Task(name, date, id);
 
             //Assigning values to our newly created task.
             task.setDoW(dow);
