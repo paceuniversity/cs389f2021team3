@@ -8,13 +8,17 @@ Purpose: TBA
 package com.example.exsecutum;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,31 +39,23 @@ public class MainActivity extends AppCompatActivity {
     private SQLiteDatabase sqLiteDatabase;
     private String taskName;
     public HashMap<Integer, ArrayList<Task>> tasks;
-
+    RecyclerView taskView;
 
     //Creating instance of main activity.
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //This variable attaches the calendarView ID from the .xml file.
-        //Copy this to some other segment of code if you want to adjust the appearance
-        //of the calendar or if you want the calendar to do something.
-        CalendarView mainCalendarView = (CalendarView) findViewById(R.id.calendarView);
+        //display for the day's activities
+        taskView = findViewById(R.id.taskView);
 
-        //Use this calendar listener in order to set the tasks to the right date! If needed, you
-        //can move this segment of code into the taskMaker in order to collect the date the user
-        //setup for a particular task.
-        mainCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            //This function collects the current date that the user has selected and converts it
-            //into a String.
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int y, int m, int d) {
-                selectedDate = Integer.toString(y) + Integer.toString(m) + Integer.toString(d);
-                dateInt = y + m + d;
-            }
-        });
+        taskViewAdapter adapter = new taskViewAdapter(this, taskMaker.tasks, 'D');
+
+        taskView.setAdapter(adapter);
+        taskView.setLayoutManager(new LinearLayoutManager(this));
+
         //Creating the database for our tasks.
         try {
             dbHandler = new mySQLiteDBHandler(this, "CalendarDatabase", null, 1);
@@ -103,45 +99,38 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //button for viewing a week
+        daily = findViewById(R.id.ButtonWeek);
+        daily.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchWeekPage();
+            }
+        });
     }
 
-    //This function launches the monthView Activity
+    //Button to view the month
     private void launchMonthPage() {
         Intent monthPage = new Intent(this, MonthlyView.class);
         startActivity(monthPage);
     }
 
-    //This function launches the taskView activity
+    //Button to view the day
     private void launchDayPage() {
         Intent dayPage = new Intent(this, DailyView.class);
         startActivity(dayPage);
+    }
+
+    //Button to view the week
+    private void launchWeekPage() {
+        Intent weekPage = new Intent(this, WeeklyView.class);
+        startActivity(weekPage);
     }
 
     //This function launches the taskMaker activity.
     private void launchNewTask() {
         Intent taskPage = new Intent(this, taskMaker.class);
         startActivity(taskPage);
-    }
-
-    //function to switch to daily view
-
-
-    //TODO use this function for any fragment that's going to open up a datepicker!
-    public void showDatePicker(View view) {
-        DialogFragment newFragment = new DatePickerFragment();
-        newFragment.show(getSupportFragmentManager(), getString(R.string.calendar_label));
-    }
-
-    //This function tracks what date the user has selected.
-    public void processDatePickerResult(int y, int m, int d) {
-        //TODO
-        //Debug stuff (This shows the date the user has picked).
-        String month_string = Integer.toString(m+1);
-        String day_string = Integer.toString(d);
-        String year_string = Integer.toString(y);
-        String dateMessage = (month_string + "/" + day_string + "/" + year_string);
-        Toast.makeText(this, getString(R.string.date_label) + ": " + dateMessage, Toast.LENGTH_SHORT).show();
-        //End of debug stuff.
     }
 
     //This function will insert tasks into our database.

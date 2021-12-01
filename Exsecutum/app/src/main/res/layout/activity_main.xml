@@ -11,8 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="M"
-        app:layout_constraintEnd_toStartOf="@+id/ButtonYear"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ButtonWeek"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,17 +26,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/ButtonTask"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Task"
-        android:onClick="showDatePicker"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonYear"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/ButtonYear" />
-
-    <Button
         android:id="@+id/ButtonWeek"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -46,27 +34,6 @@
         app:layout_constraintEnd_toStartOf="@+id/ButtonMonth"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/ButtonDay" />
-
-    <Button
-        android:id="@+id/ButtonYear"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Y"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonMonth"
-        app:layout_constraintEnd_toStartOf="@+id/ButtonTask"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/ButtonMonth" />
-
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:maxDate="12/31/2200"
-        android:minDate="01/01/2000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonMonth" />
 
     <Button
         android:id="@+id/buttonNewTask"
@@ -78,5 +45,13 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/taskView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonWeek"
+        tools:layout_editor_absoluteX="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

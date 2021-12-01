@@ -5,6 +5,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -21,7 +22,7 @@ public class Task {
 
     //These variables will need to be translated for the calendar view.
     int dayOfWeek;
-    String date;
+    LocalDate date;
 
     //Times will automatically be in military time, can be converted for the calendar view.
     int startTime;
@@ -40,7 +41,7 @@ public class Task {
     int tId;
 
     //Constructor Class.
-    public Task(String nam, String dt, int id) {
+    public Task(String nam, LocalDate dt, int id) {
         this.name = nam;
         this.date= dt;
         this.tId = id;
@@ -56,7 +57,7 @@ public class Task {
 
     //These functions set info for out Task object.
     public void setName(String nam) { this.name = nam; }
-    public void setDate(String dt) { this.date = dt; }
+    public void setDate(LocalDate dt) { this.date = dt; }
     public void setDoW(int dow) { this.dayOfWeek = dow; }
     public void setStartTime(int start) { this.startTime = start; }
     public void setEndTime(int end) { this.endTime = end; }
@@ -68,7 +69,7 @@ public class Task {
 
     //These functions get info from our Task object.
     public String getName() { return this.name; }
-    public String getDate() { return this.date; }
+    public LocalDate getDate() { return this.date; }
     public int getDayOfWeek() { return this.dayOfWeek; }
     public int getStartTime() { return this.startTime; }
     public int getEndTime() { return this.endTime; }

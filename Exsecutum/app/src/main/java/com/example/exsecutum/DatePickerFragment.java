@@ -37,7 +37,8 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
     @Override
     public void onDateSet(DatePicker datePicker, int y, int m, int d) {
         //Getting the main activity that where we'll set the current date.
-        MainActivity activity = (MainActivity) getActivity();
+        taskMaker activity = (taskMaker) getActivity();
+        assert activity != null;
         activity.processDatePickerResult(y, m, d);
     }
 
