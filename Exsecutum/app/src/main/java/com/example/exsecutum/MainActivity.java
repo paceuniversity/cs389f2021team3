@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private Button daily;
     private Button weekly;
     private Button newTask;
+    private Button toTimer;
     private mySQLiteDBHandler dbHandler;
     private String selectedDate;
     private int dateInt;
@@ -107,6 +108,19 @@ public class MainActivity extends AppCompatActivity {
                 launchWeekPage();
             }
         });
+
+        //button to the timer page
+        toTimer = findViewById(R.id.buttonTimer);
+        toTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { launchTimerPage(); }
+        });
+
+    }
+
+    private void launchTimerPage() {
+        Intent timerPage = new Intent(this, timer.class);
+        startActivity(timerPage);
     }
 
     //Button to view the month
