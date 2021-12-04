@@ -3,11 +3,11 @@ package com.example.exsecutum;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,6 +18,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 import com.example.exsecutum.Task;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -539,6 +540,11 @@ public class taskMaker extends AppCompatActivity {
         else if(rp == true && dow == -1)
             Toast.makeText(getApplicationContext(), "Repeatable is enabled but no days have been selected", Toast.LENGTH_SHORT).show();
 
+        //If the user has not made the task repeatable there's no due date for the task, don't
+            //create the task and display why the task wasn't created.
+        else if(date == null & rp == false)
+            Toast.makeText(getApplicationContext(), "Repeatable is disabled but no due date has been selected", Toast.LENGTH_SHORT).show();
+
         //Creating a task object.
         else {
             Task task = new Task(name, date, id);
@@ -551,8 +557,16 @@ public class taskMaker extends AppCompatActivity {
             task.setRepeat(rp);
             task.setColor(c);
 
+            //Assigning data initials to the task if repeatable was selected.
             //Assigning the task to the tasks ArrayList.
             tasks.add(task);
+
+            //Converting task into byte data that gets sent to our SQLite database.
+            try {
+                MainActivity.InsertDatabase(task.makebyte(task));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             //Opening up Main Activity.
             mainPage.putExtra(TASK_NAME, name);

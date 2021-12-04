@@ -15,16 +15,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
+import com.example.exsecutum.mySQLiteDBHandler;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -37,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
     private mySQLiteDBHandler dbHandler;
     private String selectedDate;
     private int dateInt;
-    private SQLiteDatabase sqLiteDatabase;
+    private static SQLiteDatabase sqLiteDatabase;
+    private static final String TAG = "MyActivity";
     private String taskName;
-    public HashMap<Integer, ArrayList<Task>> tasks;
     RecyclerView taskView;
 
     //Creating instance of main activity.
@@ -57,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
         taskView.setAdapter(adapter);
         taskView.setLayoutManager(new LinearLayoutManager(this));
 
+        //TODO use this to clear the database if it gets weird.
+        //Context context = getApplicationContext();
+        //context.deleteDatabase("CalendarDatabase");
+        //TODO
+
         //Creating the database for our tasks.
         try {
             dbHandler = new mySQLiteDBHandler(this, "CalendarDatabase", null, 1);
@@ -68,7 +77,10 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        //recieving the intent from creating a task, then storing the name that was sent over
+        //Syncing tasks ArrayList with our database.
+        taskMaker.tasks = ReadDatabase();
+
+        //Receiving the intent from creating a task, then storing the name that was sent over.
         Intent fromTaskMaker = getIntent();
         taskName = fromTaskMaker.getStringExtra(taskMaker.TASK_NAME);
 
@@ -148,34 +160,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //This function will insert tasks into our database.
-    public void InsertDatabase(byte data) {
+    public static void InsertDatabase(byte [] data) {
         ContentValues contentValue = new ContentValues();
         contentValue.put("ID", data);
         sqLiteDatabase.insert("TaskCalendar", null, contentValue);
+        sqLiteDatabase.close();
     }
 
     //This function reads all of the tasks that are stored within our database. This returns an
     //array of tasks.
-    public ArrayList<Task> ReadDatabase(byte data) {
-        String query = "Select * from TaskCalendar where ID=" + data;
+    public static ArrayList<Task> ReadDatabase() {
+        String query = "Select * from TaskCalendar";
         try {
             //This acts as a pointer for our database.
             Cursor cursor = sqLiteDatabase.rawQuery(query, null);
 
-            //Create a byte array to get all of the task names in order.
+            //Create a byte array to get all of the tasks in order.
             ArrayList<Task> results = new ArrayList<Task>();
             Task converter = null;
 
-            //Getting and outputting all tasks that were created on selectedDate.
+            //Getting and outputting all tasks that were created.
             if(cursor.moveToFirst()) {
-                while(!cursor.isAfterLast()) {
-                    //Adding task name to results.
+                //Moving to the next task if it's not null.
+                while(cursor.moveToNext()) {
+                    //Adding task to results.
                     byte[] tdata = cursor.getBlob(0);
-                    converter = converter.read(tdata);
-                    results.add(converter);
-
-                    //Moving to the next task if it's not null.
-                    cursor.moveToNext();
+                    if(tdata != null) {
+                        converter = (Task) converter.readbyte(tdata);
+                        results.add(converter);
+                    }
                 }
             }
 
@@ -187,5 +200,23 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return null;
+    }
+
+    //This function removes a task from the database.
+    public static void remove(Task t) {
+        byte[] data = null;
+        //Converting task into byte data.
+        try {
+            data = t.makebyte(t);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //Were we able to convert the task into byte data?
+        if(data != null) {
+            //Tranversing the database until we find a match of our serialized task.
+            sqLiteDatabase.delete("TaskCalendar", "BLOB=" + data, null);
+            sqLiteDatabase.close();
+        }
     }
 }
