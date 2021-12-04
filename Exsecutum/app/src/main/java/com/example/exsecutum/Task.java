@@ -1,16 +1,20 @@
 package com.example.exsecutum;
 
+import android.util.Log;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
-//This class is a representation of a singular task in the app
-public class Task {
+//This class is a representation of a singular task in the app. We need to implement Serializable in
+//order to convert a task into byte data.
+public class Task implements Serializable {
     //This sets the name of the task.
     String name;
 
@@ -82,35 +86,21 @@ public class Task {
 
 
     //This converts the task into byte data.
-    public byte[] makebyte(Task t) {
-        try {
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            ObjectOutputStream oos = new ObjectOutputStream(baos);
-            oos.writeObject(t);
-            byte[] employeeAsBytes = baos.toByteArray();
-            ByteArrayInputStream bais = new ByteArrayInputStream(employeeAsBytes);
-            return employeeAsBytes;
+    public static byte[] makebyte(Task t) throws IOException {
+        try(ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+            try(ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+                oos.writeObject(t);
+            }
+            return baos.toByteArray();
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
     //This converts byte data into a task.
-    public Task read(byte[] data) {
-        try {
-            ByteArrayInputStream baip = new ByteArrayInputStream(data);
-            ObjectInputStream ois = new ObjectInputStream(baip);
-            Task dataobj = (Task) ois.readObject();
-            return dataobj ;
+    public static Task readbyte(byte[] data) throws IOException, ClassNotFoundException {
+        try(ByteArrayInputStream baip = new ByteArrayInputStream(data)) {
+            try(ObjectInputStream ois = new ObjectInputStream(baip)) {
+                return (Task)ois.readObject();
+            }
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 }
