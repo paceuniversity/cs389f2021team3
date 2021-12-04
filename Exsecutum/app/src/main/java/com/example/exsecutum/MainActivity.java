@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //This function removes a task from the database.
-    public static void remove(Task t) {
+    public static void RemoveFromDatabase(Task t) {
         byte[] data = null;
         //Converting task into byte data.
         try {
