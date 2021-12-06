@@ -44,6 +44,7 @@ Planner app meant for people with executive functioning shortcomings. The app wi
 
 ### Sprint 3 
 * [Sprint planning](https://docs.google.com/document/d/1x3mz-th7Nkh3ZLNOQsq_HTkrrTxCrpDi72ZnzCFk5R0/edit)
+* [Scrum Meeting 6](https://docs.google.com/document/d/1C1Pm3DiIOhcg7q75E6dqOS0uTCOeLCZ1iYWupryjn_g/edit?usp=sharing)
 * Scrums
 * Sprint retrospective (Includes video & apk)
 
