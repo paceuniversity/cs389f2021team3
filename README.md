@@ -47,7 +47,7 @@ Planner app meant for people with executive functioning shortcomings. The app wi
 * [Scrum Meeting 6](https://docs.google.com/document/d/1C1Pm3DiIOhcg7q75E6dqOS0uTCOeLCZ1iYWupryjn_g/edit?usp=sharing)
 * [Scrum Meeting 7](https://docs.google.com/document/d/13hBcDQqNqIeayr60jb12bYoJoRUBWFz5Do4nuqlSJho/edit?usp=sharing)
 * [Scrum Meeting 8](https://docs.google.com/document/d/1J65xqlKsJl7HRWpSoh6L30LeGADa2vXpTDLrt7v45rQ/edit?usp=sharing)
-* Sprint retrospective (Includes video & apk)
+* [Sprint retrospective (Includes video & apk)](https://docs.google.com/document/d/179RK3S6fsAnSibuBMw2QO7nOu-e2vsXbAx474Hffhbk/edit?usp=sharing)
 
 ## Final presentation
 December 20th, 2021
