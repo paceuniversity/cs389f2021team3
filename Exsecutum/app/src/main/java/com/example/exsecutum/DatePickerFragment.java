@@ -41,6 +41,4 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         assert activity != null;
         activity.processDatePickerResult(y, m, d);
     }
-
-
 }

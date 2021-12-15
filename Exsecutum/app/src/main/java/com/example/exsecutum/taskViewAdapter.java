@@ -21,21 +21,27 @@ import java.util.ArrayList;
 
 
 //the purpose of this class is to extend recyclerview so I can actually use it with the tasks
-//TODO: today this only displays the day, week, or month for the current day. In the future I need to pass in something specific for that
 public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHolder>{
     private ArrayList<Task> tasks;
     Context context;
     private char type;
     @RequiresApi(api = Build.VERSION_CODES.O)
-    //TODO: sort the tasks by due date as secondary option, may need to implement a separate function
 
     public taskViewAdapter(Context context, ArrayList<Task> tasks, char type){
         this.context = context;
         this.type = type;
+
+        for (int i = 0; i < tasks.size(); ++i){//checking for overdue tasks
+            if (tasks.get(i).getDate().compareTo(LocalDate.now()) < 0){
+                System.out.println("Overdue Task detected: " + tasks.get(i).getDate().toString());
+                tasks.get(i).setPriority(5);//we set the task to a priority level higher than the user can set so it's always on top
+            }
+        }
+
         tasks.sort((t1, t2) -> {        //'compareTo' method did not want to work so Im manually comparing .-.
             if(t1.getPriority() < t2.getPriority())
                 return 1;
-            else //eventually will need to compare by due date
+            else
                 return -1;
         });
 
@@ -62,7 +68,7 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
         System.out.println("Day");
         System.out.println(LocalDate.now().toString());
         for (int i = 0; i < tasks.size(); ++i){
-            if (tasks.get(i).getDate().compareTo(LocalDate.now()) == 0){
+            if (tasks.get(i).getDate().compareTo(LocalDate.now()) == 0 || tasks.get(i).getPriority() == 5){
                 System.out.println(tasks.get(i).getDate().toString());
                 System.out.println(LocalDate.now().toString());
                 temp.add(tasks.get(i));
@@ -75,7 +81,7 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
         ArrayList<Task> temp = new ArrayList<>();
         System.out.println("Week");
         for (int i = 0; i < tasks.size(); ++i){
-            if (WeekHelper.getWeek(tasks.get(i).getDate()).compareTo(WeekHelper.getWeek(LocalDate.now())) == 0){
+            if (WeekHelper.getWeek(tasks.get(i).getDate()).compareTo(WeekHelper.getWeek(LocalDate.now())) == 0 || tasks.get(i).getPriority() == 5){
                 temp.add(tasks.get(i));
             }
         }
@@ -86,7 +92,7 @@ public class taskViewAdapter extends RecyclerView.Adapter<taskViewAdapter.taskHo
         ArrayList<Task> temp = new ArrayList<>();
         System.out.println("Month");
         for (int i = 0; i < tasks.size(); ++i){
-            if (tasks.get(i).getDate().getMonth().compareTo(LocalDate.now().getMonth()) == 0){
+            if (tasks.get(i).getDate().getMonth().compareTo(LocalDate.now().getMonth()) == 0 || tasks.get(i).getPriority() == 5){
                 temp.add(tasks.get(i));
             }
         }

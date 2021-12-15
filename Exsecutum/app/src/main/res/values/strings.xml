@@ -2,7 +2,7 @@
     <string name="app_name">Exsecutum</string>
     <string name="calendar_label">Calendar</string>
     <string name="date_label">DATE</string>
-    <string name="repeatable">Repeatable</string>
+    <string name="repeatable">Repeats</string>
     <string name="task_name">New Task</string>
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
