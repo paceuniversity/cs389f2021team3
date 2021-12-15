@@ -2,14 +2,10 @@ package com.example.exsecutum;
 
 import android.os.Build;
 import android.os.Bundle;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.time.*;
 
 public class MonthlyView extends AppCompatActivity {
     //this class is the actual scrolling list of tasks using recyclerview

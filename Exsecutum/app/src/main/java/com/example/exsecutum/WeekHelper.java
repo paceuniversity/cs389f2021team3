@@ -1,12 +1,9 @@
 package com.example.exsecutum;
 
 import android.os.Build;
-
 import androidx.annotation.RequiresApi;
-
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class WeekHelper {
 

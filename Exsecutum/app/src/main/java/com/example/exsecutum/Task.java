@@ -1,7 +1,5 @@
 package com.example.exsecutum;
 
-import android.util.Log;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -10,7 +8,6 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
 
 //This class is a representation of a singular task in the app. We need to implement Serializable in
 //order to convert a task into byte data.

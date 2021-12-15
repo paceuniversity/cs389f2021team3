@@ -1,7 +1,6 @@
 package com.example.exsecutum;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
