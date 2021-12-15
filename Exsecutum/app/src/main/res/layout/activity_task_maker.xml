@@ -122,7 +122,7 @@
           android:id="@+id/start_time"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginTop="24dp"
+          android:layout_marginTop="16dp"
           android:layout_weight="1"
           android:width="128dp"
           android:height="48dp"
@@ -132,7 +132,7 @@
           android:inputType="textPersonName"
           android:minHeight="48dp"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/dow_r" />
+          app:layout_constraintTop_toBottomOf="@+id/repeat" />
 
       <Switch
           android:id="@+id/start_switch"
@@ -183,12 +183,13 @@
           android:id="@+id/repeat"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
           android:height="48dp"
           android:showText="false"
           android:text="@string/repeatable"
           android:textSize="20sp"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/priority">
+          app:layout_constraintTop_toBottomOf="@+id/dow_r">
 
       </Switch>
 
@@ -242,7 +243,9 @@
           android:layout_height="wrap_content"
           android:layout_marginEnd="16dp"
           android:layout_marginBottom="16dp"
+          android:backgroundTint="@android:color/holo_blue_dark"
           android:text="@string/create_task"
+          app:cornerRadius="16dp"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent" />
 
@@ -254,7 +257,7 @@
           android:textSize="16sp"
           android:textStyle="bold"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/repeat" />
+          app:layout_constraintTop_toBottomOf="@+id/priority" />
 
       <RadioGroup
           android:id="@+id/color_select"
@@ -297,12 +300,15 @@
       <Button
           android:id="@+id/createDate"
           android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:background="#FFFFFF"
-          android:text="Date"
+          android:layout_height="48dp"
+          android:layout_marginTop="32dp"
+          android:layout_marginEnd="32dp"
           android:onClick="showDatePicker"
-          app:layout_constraintStart_toStartOf="@+id/color_select"
-          app:layout_constraintTop_toBottomOf="@+id/color_select" />
+          android:text="Due Date"
+          app:backgroundTint="@android:color/holo_blue_dark"
+          app:cornerRadius="16dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
