@@ -223,6 +223,5 @@ public class MainActivity extends AppCompatActivity {
 
         //Removing from database based of the task ID.
         sqLiteDatabase.delete("TaskCalendar", "ID=" + t.getID(), null);
-        sqLiteDatabase.close();
     }
 }
