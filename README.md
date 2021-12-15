@@ -50,7 +50,7 @@ Planner app meant for people with executive functioning shortcomings. The app wi
 * [Sprint retrospective (Includes video & apk)](https://docs.google.com/document/d/179RK3S6fsAnSibuBMw2QO7nOu-e2vsXbAx474Hffhbk/edit?usp=sharing)
 
 ## Final presentation
-December 20th, 2021
+[December 20th, 2021](https://docs.google.com/presentation/d/154kkBHkaUxRZ0surE6tsNl6CwtvvdvsQWwnECqWT_2g/edit?usp=sharing)
 
 ## Poster
 ![397e30f775f571a4dfd95b965b7bd691](https://user-images.githubusercontent.com/64506144/137413950-52307572-0f11-4d03-9bf5-7f6bae2ec17a.png)
