@@ -125,14 +125,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) { launchTimerPage(); }
         });
 
-
-
-
-
-
-
-
-
     }
 
 
@@ -242,12 +234,7 @@ public class MainActivity extends AppCompatActivity {
         sqLiteDatabase.delete("TaskCalendar", "ID=" + t.getID(), null);
     }
 
-
-
-
     private void handleTaskAlarm() {
-
-
         AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
         Intent intent = new Intent(this, taskAlarm.class);
@@ -262,14 +249,8 @@ public class MainActivity extends AppCompatActivity {
             NotificationChannel channel = new NotificationChannel("TaskAlarm", name, importance);
             channel.setDescription(description);
 
-
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
-
         }
-
-
     }
-
-
 }

@@ -512,6 +512,10 @@ public class taskMaker extends AppCompatActivity {
         SharedPreferences sh = getSharedPreferences("taskID", MODE_PRIVATE);
         tid = sh.getInt("tid", 0);
 
+        //Is the tid that's loaded from SharedPreferences a numeric value?
+        if(tid < 0)
+            tid = 0;
+
         //Assigning id of task.
         int id = tid;
 
