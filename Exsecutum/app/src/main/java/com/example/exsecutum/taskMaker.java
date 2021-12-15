@@ -517,16 +517,6 @@ public class taskMaker extends AppCompatActivity {
 
         System.out.println(id);
 
-        //Increment id.
-        ++tid;
-
-        //Saving tid into a SharedPreference
-        sh = getSharedPreferences("taskID", MODE_PRIVATE);
-        SharedPreferences.Editor ed = sh.edit();
-
-        ed.putInt("tid", tid);
-        ed.apply();
-
         //If the there's no name for the task, don't create the task and display the why the task
         //wasn't created.
         if(name == null || name.equals(""))
@@ -579,6 +569,19 @@ public class taskMaker extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            System.out.println(tasks.size());
+
+
+            //Increment id.
+            ++tid;
+
+            //Saving tid into a SharedPreference
+            sh = getSharedPreferences("taskID", MODE_PRIVATE);
+            SharedPreferences.Editor ed = sh.edit();
+
+            ed.putInt("tid", tid);
+            ed.apply();
 
             //Opening up Main Activity.
             mainPage.putExtra(TASK_NAME, name);

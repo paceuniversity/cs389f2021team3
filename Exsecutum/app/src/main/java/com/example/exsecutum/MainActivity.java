@@ -186,10 +186,18 @@ public class MainActivity extends AppCompatActivity {
 
             //Getting and outputting all tasks that were created.
             if(cursor.moveToFirst()) {
+                //Getting the first task that was created.
+                byte[] tdata = cursor.getBlob(1);
+                System.out.println(tdata);
+                if(tdata != null) {
+                    converter = (Task) converter.readbyte(tdata);
+                    results.add(converter);
+                }
+
                 //Moving to the next task if it's not null.
                 while(cursor.moveToNext()) {
                     //Adding task to results.
-                    byte[] tdata = cursor.getBlob(1);
+                    tdata = cursor.getBlob(1);
                     System.out.println(tdata);
                     if(tdata != null) {
                         converter = (Task) converter.readbyte(tdata);
@@ -215,6 +223,5 @@ public class MainActivity extends AppCompatActivity {
 
         //Removing from database based of the task ID.
         sqLiteDatabase.delete("TaskCalendar", "ID=" + t.getID(), null);
-        sqLiteDatabase.close();
     }
 }
