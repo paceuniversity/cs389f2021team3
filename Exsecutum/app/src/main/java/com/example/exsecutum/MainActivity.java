@@ -11,6 +11,11 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -47,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         //Context context = getApplicationContext();
         //context.deleteDatabase("CalendarDatabase");
         //TODO
+
 
         //Creating the database for our tasks.
         try {
@@ -89,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 launchDayPage();
+                //TODO: this method makes sure that the user gets a notification about their tasks
+                handleTaskAlarm();
             }
         });
 
@@ -117,7 +125,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) { launchTimerPage(); }
         });
 
+
+
+
+
+
+
+
+
     }
+
 
     private void launchTimerPage() {
         Intent timerPage = new Intent(this, timer.class);
@@ -224,4 +241,35 @@ public class MainActivity extends AppCompatActivity {
         //Removing from database based of the task ID.
         sqLiteDatabase.delete("TaskCalendar", "ID=" + t.getID(), null);
     }
+
+
+
+
+    private void handleTaskAlarm() {
+
+
+        AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        Intent intent = new Intent(this, taskAlarm.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+
+        alarm.set(AlarmManager.RTC_WAKEUP, 0, pendingIntent);
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "taskReminderChannel";
+            String description = "Channel for the task alarm manager";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel = new NotificationChannel("TaskAlarm", name, importance);
+            channel.setDescription(description);
+
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+
+        }
+
+
+    }
+
+
 }

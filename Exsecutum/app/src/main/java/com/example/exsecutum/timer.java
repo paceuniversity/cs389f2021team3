@@ -67,7 +67,6 @@ public class timer extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                countdownTime.setText("timer done!");
                 setNotif();
             }
         }.start();
