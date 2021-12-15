@@ -4,11 +4,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Build;
 import android.os.Bundle;
-
-import java.util.ArrayList;
 
 public class DailyView extends AppCompatActivity {
     //this class is the actual scrolling list of tasks using recyclerview

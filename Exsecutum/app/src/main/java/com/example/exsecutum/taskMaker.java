@@ -4,10 +4,10 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -16,10 +16,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.Toast;
-import com.example.exsecutum.Task;
-
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 /*
@@ -38,7 +37,7 @@ public class taskMaker extends AppCompatActivity {
     RadioGroup pGroup, colorGroup;
     Switch meridiemSwitch, repeatSwitch;
     public static final String TASK_NAME = "com.example.exsecutum.TASK_NAME";
-    private int tid;
+    private int tid = 0;
     private LocalDate date;
 
     @Override
@@ -509,11 +508,24 @@ public class taskMaker extends AppCompatActivity {
             }
         }
 
+        //Getting current ID of tid.
+        SharedPreferences sh = getSharedPreferences("taskID", MODE_PRIVATE);
+        tid = sh.getInt("tid", 0);
+
         //Assigning id of task.
         int id = tid;
 
+        System.out.println(id);
+
         //Increment id.
         ++tid;
+
+        //Saving tid into a SharedPreference
+        sh = getSharedPreferences("taskID", MODE_PRIVATE);
+        SharedPreferences.Editor ed = sh.edit();
+
+        ed.putInt("tid", tid);
+        ed.apply();
 
         //If the there's no name for the task, don't create the task and display the why the task
         //wasn't created.
@@ -522,8 +534,8 @@ public class taskMaker extends AppCompatActivity {
 
         //If the there's no date for the task, don't create the task and display the why the task
         //wasn't created.
-        //else if(dt == null || dt.equals(""))
-        //    Toast.makeText(getApplicationContext(), "Please enter a date for your task", Toast.LENGTH_SHORT).show();
+        else if(date == null || date.equals(""))
+            Toast.makeText(getApplicationContext(), "Please enter a date for your task", Toast.LENGTH_SHORT).show();
 
         //If the start or end time is -1 or if the start time is grater than or equal to the end
         //time, don't create the task and display the why the task wasn't created.
