@@ -5,26 +5,23 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
-import android.net.Uri;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-public class timerAlarm extends BroadcastReceiver {
-
-    //Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+public class taskAlarm extends BroadcastReceiver {
 
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Intent timerPage = new Intent(context, timer.class);
-        timerPage.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendIntent = PendingIntent.getActivity(context, 0 , timerPage, 0);
+        Intent mainPage = new Intent(context, DailyView.class);
+        mainPage.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendIntent = PendingIntent.getActivity(context, 0 , mainPage, 0);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context,"TimerAlarm")
-                .setSmallIcon(R.drawable.ic_launcher_background)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context,"TaskAlarm")
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setContentTitle("Exsecutum")
-                .setContentText("Your timer is done, go take a break.")
+                .setContentText("You have tasks to do!")
                 .setAutoCancel(true)
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM))
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
@@ -32,7 +29,9 @@ public class timerAlarm extends BroadcastReceiver {
                 .setContentIntent(pendIntent);
 
         NotificationManagerCompat notifManager = NotificationManagerCompat.from(context);
-        notifManager.notify(001, builder.build());
+        notifManager.notify(002, builder.build());
+
+
 
     }
 }
