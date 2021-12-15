@@ -580,6 +580,7 @@ public class taskMaker extends AppCompatActivity {
                 e.printStackTrace();
             }
 
+            System.out.println(tasks.size());
             //Opening up Main Activity.
             mainPage.putExtra(TASK_NAME, name);
             startActivity(mainPage);
