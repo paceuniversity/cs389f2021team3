@@ -53,7 +53,8 @@ Planner app meant for people with executive functioning shortcomings. The app wi
 [December 20th, 2021](https://docs.google.com/presentation/d/154kkBHkaUxRZ0surE6tsNl6CwtvvdvsQWwnECqWT_2g/edit?usp=sharing)
 
 ## Poster
-![864c2d8eee3585ef3d783b7d551d8f10](https://user-images.githubusercontent.com/64506144/146824606-db9a4765-4d5b-465a-abb2-eae3026d5a6f.png)
+![7f5193dd8dc8bc7d69222dbc20006824](https://user-images.githubusercontent.com/64506144/146829400-9ca376a4-9751-4f25-bcfc-6269d8886c13.png)
+
 
 ## Team Photo 
 ![397e30f775f571a4dfd95b965b7bd691](https://user-images.githubusercontent.com/64506144/137413950-52307572-0f11-4d03-9bf5-7f6bae2ec17a.png)
